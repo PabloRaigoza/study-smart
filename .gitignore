@@ -1,1 +1,7 @@
 fb.js
+
+/.firebase
+
+/.github/workflows
+
+*.log
