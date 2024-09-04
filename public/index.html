@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study-Smart</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js"></script>
+    <script type='module' src="source.js"></script>
 </head>
 
 <body>
@@ -19,7 +21,7 @@
             <a href="#">Calendar</a>
         </nav>
         <div class="login-container">
-            <button class="login-button" onclick="openLogin()">Login</button>
+            <button id='login-button' class="login-button">Login</button>
         </div>
     </header>
 
@@ -100,62 +102,8 @@
         </div>
     </div>
 
-    <!-- Firebase SDK -->
-    <script type="module">
-        // Firebase import
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
-
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_AUTH_DOMAIN",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_STORAGE_BUCKET",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-
-        // Open the login modal
-        function openLogin() {
-            document.getElementById('auth-modal').style.display = 'flex';
-        }
-
-        // Close the login modal
-        function closeLogin() {
-            document.getElementById('auth-modal').style.display = 'none';
-        }
-
-        // Close modal if clicked outside of the modal content
-        window.onclick = function(event) {
-            const modal = document.getElementById('auth-modal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        // Handle login form submission
-        document.getElementById('login-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            try {
-                const userCredential = await signInWithEmailAndPassword(auth, email, password);
-                const user = userCredential.user;
-                alert("Login successful");
-                closeLogin();
-            } catch (error) {
-                alert("Error logging in: " + error.message);
-            }
-        });
-    </script>
-
     <!-- Timer and Calendar JS -->
     <script src="js/timer-calendar.js"></script>
+    <script type="module" src="js/auth.js"></script>
 </body>
 </html>

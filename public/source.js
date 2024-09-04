@@ -2,6 +2,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
+// import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -34,15 +36,8 @@ try {
 console.log('sucess fully connectedt');
 console.log(app);
 
-// Open the login modal
-function openLogin() {
-  document.getElementById('auth-modal').style.display = 'flex';
-}
-
 // Close the login modal
-function closeLogin() {
-  document.getElementById('auth-modal').style.display = 'none';
-}
+function closeLogin() { console.log('Close login modal'); }
 
 // Close modal if clicked outside of the modal content
 window.onclick = function(event) {
