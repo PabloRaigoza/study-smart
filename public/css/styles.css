@@ -1,0 +1,335 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    width: 100%;
+    background-color: #ff4c00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 80px;
+}
+
+.logo img {
+    max-height: 80px;
+    width: auto;
+}
+
+.header-title {
+    font-size: 50px;
+    color: black;
+    font-weight: bold;
+    font-family: 'Pacifico', cursive;
+    margin-left: 10px;
+}
+
+.menu a {
+    color: black;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 20px;
+}
+
+.login-container {
+    margin-right: 20px;
+}
+
+.login-button {
+    background-color: #ffffff;
+    color: #ff4c00;
+    padding: 10px 20px;
+    border: 2px solid #ff4c00;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-button:hover {
+    background-color: #ff4c00;
+    color: #ffffff;
+}
+
+/* Main content layout */
+.main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 120px; /* Give space for fixed header */
+    width: 75%;
+}
+
+/* Task Creator Section */
+.task-creator {
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px;
+    background-color: #ffc0a5;
+    margin: 10px 10px 10px 10px;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+}
+
+.task-name,
+.task-productivity,
+.task-time,
+.task-tags {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.difficulty-container {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    gap: 10px;
+}
+
+.difficulty-bar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.difficulty-bar .level {
+    width: 18%;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.difficulty-bar .level.selected {
+    border: 2px solid #333;
+}
+
+.record-button {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.record-button:hover {
+    background-color: #0056b3;
+}
+
+/* Timer Section */
+.timer {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffc0a5;
+    margin: 10px 10px 10px 10px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.start-stop-button,
+.reset-button {
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.start-stop-button {
+    background-color: #50da00;
+    color: white;
+}
+
+.start-stop-button:hover {
+    background-color: #3cb000;
+}
+
+.reset-button {
+    background-color: #ff0000;
+    color: white;
+}
+
+.reset-button:hover {
+    background-color: #cc0000;
+}
+
+/* Calendar Section */
+.calendar {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffc0a5;
+    margin: 10px 10px 10px 10px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.calendar h2 {
+    margin-bottom: 20px;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.calendar-controls button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.calendar-controls button:hover {
+    background-color: #0056b3;
+}
+
+.calendar-controls select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.calendar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th, 
+.calendar td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Other Information Section */
+footer {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff4c00;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Authentication Modal */
+.auth-modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: red;
+}
+
+/* Responsive Styles */
+@media (max-width: 800px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+
+    .task-creator,
+    .timer,
+    .calendar {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .task-creator {
+        order: 2;
+    }
+
+    .timer {
+        order: 1;
+    }
+
+    .calendar {
+        order: 3;
+    }
+}
+
+@media (max-width: 800px) {
+    .main-content {
+        width: 95%;
+    }
+
+    .task-creator,
+    .timer,
+    .calendar {
+        width: 100%;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+
+    .header-title {
+        font-size: 26px;
+        
+    }
+
+    .login-button {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}

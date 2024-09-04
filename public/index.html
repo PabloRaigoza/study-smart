@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study-Smart</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="assests/logo.png" alt="missing logo">
+        </div>
+        <h1 class="header-title">Study Smart</h1>
+        <nav class="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Calendar</a>
+        </nav>
+        <div class="login-container">
+            <button class="login-button" onclick="openLogin()">Login</button>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- Task Creator Section -->
+        <div class="task-creator">
+            <h2>Task Creator</h2>
+            <div class="task">
+                <input type="text" placeholder="Task Name" class="task-name">
+                
+                <div class="difficulty-container">
+                    <label for="difficulty">Difficulty:</label>
+                    <div class="difficulty-bar" id="difficulty-bar">
+                        <div class="level" data-level="1" style="background-color: #00ff00;"></div>
+                        <div class="level" data-level="2" style="background-color: #ccff00;"></div>
+                        <div class="level" data-level="3" style="background-color: #ffcc00;"></div>
+                        <div class="level" data-level="4" style="background-color: #ff6600;"></div>
+                        <div class="level" data-level="5" style="background-color: #ff0000;"></div>
+                    </div>
+                </div>
+
+                <div class="productivity-time">
+                    <input type="text" placeholder="Productivity" class="task-productivity">
+                    <span>/</span>
+                    <input type="text" placeholder="Time" class="task-time">
+                </div>
+
+                <div class="tags-container">
+                    <input type="text" placeholder="Add tags separated by commas" class="task-tags" id="tag-input">
+                </div>
+
+                <button class="record-button">Record</button>
+            </div>
+        </div>
+
+        <!-- Timer Section -->
+        <div class="timer">
+            <div class="timer-display" id="timer">00:00:00</div>
+            <button class="start-stop-button" onclick="startStopTimer()">Start/Stop</button>
+            <button class="reset-button" onclick="resetTimer()">Reset</button>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="calendar">
+            <h2>Calendar</h2>
+            <div class="calendar-controls">
+                <button onclick="changeMonth(-1)">Previous</button>
+                <button onclick="changeMonth(1)">Next</button>
+                <button onclick="changeYear(-1)">Previous Year</button>
+                <button onclick="changeYear(1)">Next Year</button>
+                <select id="view-select" onchange="changeView()">
+                    <option value="monthly">Monthly</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="daily">Daily</option>
+                </select>
+            </div>
+            <div id="calendar-view"></div>
+        </div>
+    </div>
+
+    <!-- Other Information Section -->
+    <footer>
+        <p>Made by Bodong Liu, Pablo Raigoza</p>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="auth-modal">
+        <div class="auth-modal-content">
+            <span class="close-button" onclick="closeLogin()">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Email:</label>
+                <input type="email" id="username" name="username" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Firebase import
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Open the login modal
+        function openLogin() {
+            document.getElementById('auth-modal').style.display = 'flex';
+        }
+
+        // Close the login modal
+        function closeLogin() {
+            document.getElementById('auth-modal').style.display = 'none';
+        }
+
+        // Close modal if clicked outside of the modal content
+        window.onclick = function(event) {
+            const modal = document.getElementById('auth-modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Handle login form submission
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                alert("Login successful");
+                closeLogin();
+            } catch (error) {
+                alert("Error logging in: " + error.message);
+            }
+        });
+    </script>
+
+    <!-- Timer and Calendar JS -->
+    <script src="js/timer-calendar.js"></script>
+</body>
+</html>
