@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study-Smart</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js"></script>
     <script type='module' src="source.js"></script>
 </head>
 
@@ -20,8 +19,9 @@
             <a href="#">About</a>
             <a href="#">Calendar</a>
         </nav>
-        <div class="login-container">
+        <div id="login-container-id" class="login-container">
             <button id='login-button' class="login-button">Login</button>
+            <img id="user-icon">
         </div>
     </header>
 
@@ -30,7 +30,7 @@
         <div class="task-creator">
             <h2>Task Creator</h2>
             <div class="task">
-                <input type="text" placeholder="Task Name" class="task-name">
+                <input id="task-name-id" type="text" placeholder="Task Name" class="task-name">
                 
                 <div class="difficulty-container">
                     <label for="difficulty">Difficulty:</label>
@@ -53,7 +53,7 @@
                     <input type="text" placeholder="Add tags separated by commas" class="task-tags" id="tag-input">
                 </div>
 
-                <button class="record-button">Record</button>
+                <button id="record-button" class="record-button">Record</button>
             </div>
         </div>
 
@@ -87,23 +87,10 @@
         <p>Made by Bodong Liu, Pablo Raigoza</p>
     </footer>
 
-    <!-- Authentication Modal -->
-    <div id="auth-modal" class="auth-modal">
-        <div class="auth-modal-content">
-            <span class="close-button" onclick="closeLogin()">&times;</span>
-            <h2>Login</h2>
-            <form id="login-form">
-                <label for="username">Email:</label>
-                <input type="email" id="username" name="username" required><br><br>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required><br><br>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-    </div>
-
     <!-- Timer and Calendar JS -->
     <script src="js/timer-calendar.js"></script>
+    <script type="text/javascript" src="js/general.js"></script>
+    <script type="module" src="js/record.js"></script>
     <script type="module" src="js/auth.js"></script>
 </body>
 </html>

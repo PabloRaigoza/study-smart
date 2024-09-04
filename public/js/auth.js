@@ -20,22 +20,20 @@ function openLogin() {
   signInWithPopup(auth, provider)
   .then((result) => {
     console.log('Clicked login');
-  //   // This gives you a Google Access Token. You can use it to access the Google API.
-  //   const credential = GoogleAuthProvider.credentialFromResult(result);
-  //   const token = credential.accessToken;
-  //   // The signed-in user info.
-  //   const user = result.user;
-  //   // IdP data available using getAdditionalUserInfo(result)
-  //   // ...
-  // }).catch((error) => {
-  //   // Handle Errors here.
-  //   const errorCode = error.code;
-  //   const errorMessage = error.message;
-  //   // The email of the user's account used.
-  //   const email = error.customData.email;
-  //   // The AuthCredential type that was used.
-  //   const credential = GoogleAuthProvider.credentialFromError(error);
-  //   // ...
+    isLoggedIn = true;
+
+    document.getElementById('login-button').style.display = 'none';
+
+    let profile_img = document.createElement('img');
+    profile_img.src = result.user.photoURL;
+    profile_img.style.width = '40px';
+    profile_img.style.height = '40px';
+    profile_img.style.borderRadius = '30%';
+    profile_img.style.marginTop = '10px';
+    profile_img.style.marginRight = '10px';
+    document.getElementById('login-container-id').appendChild(profile_img);
+
+    user = result.user;
   });
 }
 

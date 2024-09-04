@@ -36,8 +36,7 @@ try {
 console.log('sucess fully connectedt');
 console.log(app);
 
-// Close the login modal
-function closeLogin() { console.log('Close login modal'); }
+export { app, db, setDoc, doc };
 
 // Close modal if clicked outside of the modal content
 window.onclick = function(event) {
