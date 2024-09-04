@@ -1,18 +1,18 @@
 /* General body styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
 }
 
 /* Header styling */
 header {
     width: 100%;
-    background-color: #ff4c00;
+    background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,27 +21,28 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    height: 80px;
+    height: 30px;
 }
 
 .logo img {
-    max-height: 80px;
-    width: auto;
+    max-height: 40px;
 }
 
 .header-title {
-    font-size: 50px;
-    color: black;
+    font-size: 36px;
+    color: #404040;
     font-weight: bold;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Roboto', sans-serif;
     margin-left: 10px;
 }
 
 .menu a {
-    color: black;
+    color: #404040;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
     margin: 0 20px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .login-container {
@@ -56,6 +57,7 @@ header {
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    margin-right: 10px;
 }
 
 .login-button:hover {
@@ -70,7 +72,7 @@ header {
     justify-content: space-between;
     align-items: start;
     margin-top: 120px; /* Give space for fixed header */
-    width: 75%;
+    width: 100%;
 }
 
 /* Task Creator Section */
@@ -78,7 +80,7 @@ header {
     width: 100%;
     max-width: 600px;
     min-width: 300px;
-    background-color: #ffc0a5;
+    background-color: #f4f4f4;
     margin: 10px 10px 10px 10px;
     padding: 20px;
     border-radius: 8px;
@@ -92,9 +94,10 @@ header {
 .task-productivity,
 .task-time,
 .task-tags {
+    font-family: 'Roboto', sans-serif;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #f4f4f4;
     width: 100%;
     margin: 5px;
     font-size: 16px;
@@ -122,10 +125,11 @@ header {
 }
 
 .difficulty-bar .level.selected {
-    border: 2px solid #333;
+    border: 2px solid #f4f4f4;
 }
 
 .record-button {
+    font-family: 'Roboto', sans-serif;
     padding: 10px;
     border-radius: 5px;
     background-color: #007bff;
@@ -143,7 +147,7 @@ header {
 .timer {
     width: 100%;
     max-width: 600px;
-    background-color: #ffc0a5;
+    background-color: #f4f4f4;
     margin: 10px 10px 10px 10px;
     padding: 20px;
     border-radius: 8px;
@@ -152,12 +156,14 @@ header {
 }
 
 .timer-display {
+    font-family: 'Teko', sans-serif;
     font-size: 48px;
     margin-bottom: 20px;
 }
 
 .start-stop-button,
 .reset-button {
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 5px;
@@ -188,7 +194,7 @@ header {
 .calendar {
     width: 100%;
     max-width: 600px;
-    background-color: #ffc0a5;
+    background-color: #f4f4f4;
     margin: 10px 10px 10px 10px;
     padding: 20px;
     border-radius: 8px;
@@ -220,7 +226,7 @@ header {
 .calendar-controls select {
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #f4f4f4;
 }
 
 .calendar table {
@@ -228,18 +234,18 @@ header {
     border-collapse: collapse;
 }
 
-.calendar th, 
+.calendar th,
 .calendar td {
     padding: 10px;
     text-align: center;
-    border: 1px solid #ccc;
+    border: 1px solid #f4f4f4;
 }
 
 /* Other Information Section */
 footer {
     width: 100%;
     padding: 10px;
-    background-color: #ff4c00;
+    background-color: #ffffff;
     text-align: center;
     position: fixed;
     bottom: 0;
@@ -281,12 +287,13 @@ footer {
     color: red;
 }
 
-/* Responsive Styles */
-@media (max-width: 800px) {
+/* When width=1020, change to column layout */
+@media (max-width: 1020px) {
     .main-content {
         flex-direction: column;
+        align-items: center;
+        margin-top: 120px;
     }
-
 
     .task-creator,
     .timer,
@@ -305,31 +312,5 @@ footer {
 
     .calendar {
         order: 3;
-    }
-}
-
-@media (max-width: 800px) {
-    .main-content {
-        width: 95%;
-    }
-
-    .task-creator,
-    .timer,
-    .calendar {
-        width: 100%;
-    }
-
-    .menu a {
-        font-size: 16px;
-    }
-
-    .header-title {
-        font-size: 26px;
-        
-    }
-
-    .login-button {
-        padding: 5px 10px;
-        font-size: 14px;
     }
 }
