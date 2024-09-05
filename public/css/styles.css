@@ -41,7 +41,7 @@ header {
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
     justify-content: center;
-    margin: 0 20px;
+    margin: 0 30px;
     font-size: 16px;
 }
 
@@ -52,12 +52,10 @@ header {
 .login-button {
     background-color: #ffffff;
     color: #ff4c00;
-    padding: 10px 20px;
     border: 2px solid #ff4c00;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    margin-right: 10px;
 }
 
 .login-button:hover {
@@ -71,7 +69,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: start;
-    margin-top: 120px; /* Give space for fixed header */
+    margin-top: 70px; /* Give space for fixed header */
     width: 100%;
 }
 
@@ -81,18 +79,31 @@ header {
     max-width: 600px;
     min-width: 300px;
     background-color: #f4f4f4;
-    margin: 10px 10px 10px 10px;
+    margin: 15px;
     padding: 20px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
     overflow: hidden;
 }
 
-.task-name,
+.productivity-time {
+    display: flex;
+    flex-direction: row;
+}
+
 .task-productivity,
-.task-time,
+.task-time {
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #f4f4f4;
+    margin: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.task-name,
 .task-tags {
     font-family: 'Roboto', sans-serif;
     padding: 10px;
@@ -148,8 +159,8 @@ header {
     width: 100%;
     max-width: 600px;
     background-color: #f4f4f4;
-    margin: 10px 10px 10px 10px;
-    padding: 20px;
+    margin: 15px;
+    padding: 10px;
     border-radius: 8px;
     text-align: center;
     margin-bottom: 20px;
@@ -169,7 +180,7 @@ header {
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    margin: 10px;
+    margin: 5px;
 }
 
 .start-stop-button {
@@ -195,7 +206,7 @@ header {
     width: 100%;
     max-width: 600px;
     background-color: #f4f4f4;
-    margin: 10px 10px 10px 10px;
+    margin: 15px;
     padding: 20px;
     border-radius: 8px;
 }
@@ -244,73 +255,80 @@ header {
 /* Other Information Section */
 footer {
     width: 100%;
-    padding: 10px;
-    background-color: #ffffff;
+    padding: 15px;
+    background-color: #e8e8e8;
     text-align: center;
     position: fixed;
     bottom: 0;
     left: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
     font-weight: bold;
 }
 
-/* Authentication Modal */
-.auth-modal {
-    display: none;
-    position: fixed;
-    z-index: 1001;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-.auth-modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 300px;
-}
-
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.close-button:hover {
-    color: red;
-}
-
 /* When width=1020, change to column layout */
-@media (max-width: 1020px) {
+@media (max-width: 1050px) {
     .main-content {
         flex-direction: column;
         align-items: center;
         margin-top: 120px;
     }
 
-    .task-creator,
-    .timer,
-    .calendar {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    .task-creator {
-        order: 2;
+    .menu a {
+        margin: 0 20px;
     }
 
     .timer {
         order: 1;
     }
 
+    .task-creator {
+        order: 2;
+    }
+
     .calendar {
         order: 3;
+    }
+}
+
+/* When width=600 */
+@media (max-width: 660px) {
+    header {
+        padding: 10px;
+    }
+
+    .header-title {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .menu a {
+        font-size: 14px;
+        margin: 0 10px;
+    }
+
+    .login-button {
+        font-size: 14px;
+    }
+}
+
+/* When width=600 */
+@media (max-width: 490px) {
+    header {
+        padding: 5px;
+    }
+
+    .header-title {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .menu a {
+        font-size: 12px;
+        margin: 0 5px;
+    }
+
+    .login-button {
+        font-size: 12px;
     }
 }
