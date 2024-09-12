@@ -84,7 +84,7 @@ header {
 
 /* Task Creator Section */
 .task-creator {
-    width: 100%;
+    width: 85%;
     max-width: 600px;
     min-width: 300px;
     background-color: #f4f4f4;
@@ -127,15 +127,68 @@ header {
     width: 100%;
 }
 
-.difficulty-bar .level {
-    width: 18%;
-    height: 30px;
-    border-radius: 5px;
-    cursor: pointer;
+.difficulty-bar .level[data-level="1"] {
+    background-color: #6de200;
 }
 
-.difficulty-bar .level.selected {
-    border: 2px solid #f4f4f4;
+.difficulty-bar .level[data-level="2"] {
+    background-color: #eddd00;
+}
+
+.difficulty-bar .level[data-level="3"] {
+    background-color: #ff7300;
+}
+
+.difficulty-bar .level[data-level="4"] {
+    background-color: #dc1a05;
+}
+
+.difficulty-bar .level[data-level="5"] {
+    background-color: #cd17be;
+}
+
+.difficulty-bar .level {
+    position: relative;
+    width: 19%;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    cursor: pointer;
+     /* Keep the original background */
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+/* Pseudo-element for slanted lines, hidden by default */
+.difficulty-bar .level::after {
+    content: '';
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.2) 0,
+        rgba(255, 255, 255, 0.2) 5px,
+        transparent 5px,
+        transparent 10px
+    );
+    opacity: 0;
+    pointer-events: none; /* Ensures clicks pass through */
+    z-index: 1; /* Make sure the lines appear on top */
+}
+
+/* Show the slanted lines when the level is selected */
+.difficulty-bar .level.selected::after {
+    opacity: 1;
 }
 
 .record-button {
@@ -156,7 +209,7 @@ header {
 
 /* Timer Section */
 .timer {
-    width: 100%;
+    width: 85%;
     max-width: 600px;
     background-color: #f4f4f4;
     margin: 10px;
@@ -167,9 +220,9 @@ header {
 }
 
 .timer-display {
-    font-family: 'Teko', sans-serif;
+    font-family: "Lucida Console", "Courier New", monospace;
     font-size: 48px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .start-stop-button,
@@ -203,7 +256,7 @@ header {
 
 /* Calendar Section */
 .calendar {
-    width: 100%;
+    width: 85%;
     max-width: 600px;
     background-color: #f4f4f4;
     margin: 10px 20px 10px 10px;
@@ -250,6 +303,13 @@ header {
     padding: 10px;
     text-align: center;
     border: 1px solid #f4f4f4;
+}
+
+/* About Section */
+.about {
+    width: 85%;
+    margin: 10px 20px 100px 20px;
+    padding: 20px;
 }
 
 /* Other Information Section */
@@ -301,6 +361,7 @@ footer {
         align-items: center;
         align-content: center;
         height: 49px;
+        margin-bottom: 1px;
     }
 
     .menu {
@@ -311,6 +372,18 @@ footer {
 
     .login-button {
         margin-left: 24px;
+    }
+
+    .timer {
+        margin: 10px 10px 10px 10px;
+    }
+
+    .calendar {
+        margin: 10px 10px 10px 10px;
+    }
+
+    .task-creator {
+        margin: 10px 10px 10px 10px;
     }
 }
 

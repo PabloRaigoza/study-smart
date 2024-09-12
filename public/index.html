@@ -28,18 +28,18 @@
     <div class="main-content">
         <!-- Task Creator Section -->
         <div class="task-creator">
-            <h2>Task Creator</h2>
+            <h2>Task Recorder</h2>
             <div class="task">
                 <input id="task-name-id" type="text" placeholder="Task Name" class="task-name">
                 
                 <div class="difficulty-container">
                     <label for="difficulty">Difficulty:</label>
                     <div class="difficulty-bar" id="difficulty-bar">
-                        <div class="level" data-level="1" style="background-color: #00ff00;"></div>
-                        <div class="level" data-level="2" style="background-color: #ccff00;"></div>
-                        <div class="level" data-level="3" style="background-color: #ffcc00;"></div>
-                        <div class="level" data-level="4" style="background-color: #ff6600;"></div>
-                        <div class="level" data-level="5" style="background-color: #ff0000;"></div>
+                        <div class="level" data-level="1"></div>
+                        <div class="level" data-level="2"></div>
+                        <div class="level" data-level="3"></div>
+                        <div class="level" data-level="4"></div>
+                        <div class="level" data-level="5"></div>
                     </div>
                 </div>
 
@@ -82,11 +82,32 @@
             </div>
             <div id="calendar-view"></div>
         </div>
+        
+
+
     </div>
+
+            <!-- About Section -->
+            <div class="about">
+                <h2>About</h2>
+                <p>
+                    Study Smart is a web application developed by Bodong Liu and Pablo Raigoza,
+                    two undergrads at Cornell University.
+                    You can record your work sessions tasks, record the time you spend on them, 
+                    and view your progress later. 
+                    Study Smart is designed to help you stay organized and focused on your goals.
+                    Note that the website is still under construction and some features may not work as expected.
+                    Future updates:
+                    - A working calendar
+                    - A visualized progress tracker
+                    - Smart suggestions for scheduling tasks
+                    - And more!
+    
+                </p>
 
     <!-- Other Information Section -->
     <footer>
-        <p>Made by Bodong Liu and Pablo Raigoza at Cornell University</p>
+        <p>Made by Bodong Liu and Pablo Raigoza</p>
     </footer>
 
     <!-- Timer and Calendar JS -->
@@ -94,5 +115,6 @@
     <script type="text/javascript" src="js/general.js"></script>
     <script type="module" src="js/record.js"></script>
     <script type="module" src="js/auth.js"></script>
+    <script src="/js/difficulty.js"></script>
 </body>
 </html>
