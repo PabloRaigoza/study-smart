@@ -26,10 +26,9 @@ function openLogin() {
 
     let profile_img = document.createElement('img');
     profile_img.src = result.user.photoURL;
-    profile_img.style.width = '40px';
-    profile_img.style.height = '40px';
+    profile_img.style.width = '35px';
+    profile_img.style.height = '35px';
     profile_img.style.borderRadius = '30%';
-    profile_img.style.marginTop = '10px';
     profile_img.style.marginRight = '10px';
     document.getElementById('login-container-id').appendChild(profile_img);
 
