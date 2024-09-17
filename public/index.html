@@ -29,9 +29,10 @@
         <!-- Task Creator Section -->
         <div class="task-creator">
             <h2>Task Recorder</h2>
-            <div class="task">
-                <input id="task-name-id" type="text" placeholder="Task Name" class="task-name">
-                
+                <div class="task-item">
+                    <input id="task-name-id" type="text" placeholder="Task Name" class="task-recorder-input">
+                </div>
+
                 <div class="difficulty-container">
                     <label for="difficulty">Difficulty:</label>
                     <div class="difficulty-bar" id="difficulty-bar">
@@ -43,20 +44,36 @@
                     </div>
                 </div>
 
-                <div class="productivity">
-                    <input type="text" placeholder="Productivity" class="task-productivity">
+                <div class="radio-container">
+                    <label for="task-type">Task Type:</label>
+                    <radio id="task-type-id" class="task-type">
+                        <input type="radio" name="task-type" value="linear">Linear
+                        <input type="radio" name="task-type" value="non-Linear">Non-Linear
+                    </radio>
                 </div>
 
-                <div class="Time">
-                    <input type="text" placeholder="Time" class="task-time">
+                <div class="task-item">
+                    <input id="productivity-id" type="number" placeholder="Productivity" class="task-recorder-input">
                 </div>
 
-                <div class="tags-container">
-                    <input type="text" placeholder="Add tags separated by commas" class="task-tags" id="tag-input">
+                <div hidden id="non-linear-prod-radio-id" class="radio-container">
+                    <label hidden for="non-linear productivity">Productivity:</label>
+                    <radio hidden id="non-linear-prod" class="non-linear-prod">
+                        <input type="radio" name="task-type" value="low-prod">Low
+                        <input type="radio" name="task-type" value="mid-prod">Medium
+                        <input type="radio" name="task-type" value="high-prod">High
+                    </radio>
+                </div>
+
+                <div class="task-item">
+                    <input id="time-id" type="text" placeholder="Time" class="task-recorder-input">
+                </div>
+
+                <div class="task-item">
+                    <input id="tags-id" type="text" placeholder="Add tags separated by commas" class="task-recorder-input" id="tag-input">
                 </div>
 
                 <button id="record-button" class="record-button">Record</button>
-            </div>
         </div>
 
         <!-- Timer Section -->

@@ -100,10 +100,7 @@ header {
     margin: 0px 0px 5px 0px;
 }
 
-.task-productivity,
-.task-time,
-.task-name,
-.task-tags {
+.task-recorder-input {
     font-family: 'Roboto', sans-serif;
     padding: 10px;
     border-radius: 5px;
@@ -189,6 +186,13 @@ header {
 /* Show the slanted lines when the level is selected */
 .difficulty-bar .level.selected::after {
     opacity: 1;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    gap: 10px;
 }
 
 .record-button {

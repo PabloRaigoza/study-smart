@@ -21,20 +21,28 @@ async function record_push() {
         return;
     }
 
+    // Take the values from the input fields
     let col_id = user.email;
     let task_name = document.getElementById('task-name-id').value;
+    let prod = document.getElementById('productivity-id').value;
+    let time = document.getElementById('time-id').value;
+    let tags = document.getElementById('tags-id').value;
     if (task_name === '') {
-        // alert('Please enter a task name');
-        // return;
-        task_name = 'default';
+        alert('Please enter a task name');
+        return;
     }
-    let prod = "very good";
-    let time = "1 hour";
-    let tags = [
-        "tag1",
-        "tag2",
-        "tag3"
-    ]
+    if (prod === '') {
+        alert('Please enter a productivity value');
+        return;
+    }
+    if (time === '') {
+        alert('Please enter a time value');
+        return;
+    }
+    if (tags === '') {
+        tags = 'None';
+    }
+
     
     await setDoc(doc(db, col_id, task_name), {
         prod: prod,
@@ -43,6 +51,12 @@ async function record_push() {
     });
 
     console.log(user)
+    alert('Task recorded successfully!');
+
+    document.getElementById('task-name-id').value = '';
+    document.getElementById('productivity-id').value = '';
+    document.getElementById('time-id').value = '';
+    document.getElementById('tags-id').value = '';
 }
 
 document.getElementById('record-button').addEventListener('click', record_push);
