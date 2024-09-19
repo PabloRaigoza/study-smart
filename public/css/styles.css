@@ -56,9 +56,9 @@ header {
 }
 
 .login-button {
-    background-color: #ffffff;
-    color: #ff4c00;
-    border: 2px solid #ff4c00;
+    background-color: #e3d9ca;
+    color: #d37249;
+    border: 2px solid #e3d9ca;
     border-radius: 8px;
     cursor: pointer;
     font-size: 18px;
@@ -67,7 +67,7 @@ header {
 }
 
 .login-button:hover {
-    background-color: #ff4c00;
+    background-color: #d37249;
     color: #ffffff;
 }
 
@@ -83,6 +83,13 @@ header {
 }
 
 /* Task Creator Section */
+.task-item {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0px 5px 0px;
+    padding: 5px;
+}
+
 .task-creator {
     width: 85%;
     max-width: 600px;
@@ -111,12 +118,6 @@ header {
     box-sizing: border-box;
 }
 
-.difficulty-container {
-    display: flex;
-    align-items: center;
-    margin: 5px;
-    gap: 10px;
-}
 
 .difficulty-bar {
     display: flex;
@@ -125,23 +126,23 @@ header {
 }
 
 .difficulty-bar .level[data-level="1"] {
-    background-color: #6de200;
+    background-color: #8da977;
 }
 
 .difficulty-bar .level[data-level="2"] {
-    background-color: #eddd00;
+    background-color: #dac99b;
 }
 
 .difficulty-bar .level[data-level="3"] {
-    background-color: #ff7300;
+    background-color: #c89d79;
 }
 
 .difficulty-bar .level[data-level="4"] {
-    background-color: #dc1a05;
+    background-color: #ae655d;
 }
 
 .difficulty-bar .level[data-level="5"] {
-    background-color: #cd17be;
+    background-color: #975892;
 }
 
 .difficulty-bar .level {
@@ -195,12 +196,34 @@ header {
     gap: 10px;
 }
 
+
+.non-linear-prod {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin: 3px;
+}
+
+.non-linear-prod input[type="radio"] {
+    margin-right: 5px; 
+}
+
+.non-linear-prod label {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.task-type {
+    margin: 5px;
+    height: 30px;
+}
+
 .record-button {
     font-family: 'Roboto', sans-serif;
     padding: 10px;
     margin: 5px 0px 0px 0px;
     border-radius: 5px;
-    background-color: #ff4c00;
+    background-color: #d37249;
     color: white;
     font-size: 16px;
     border: none;
@@ -208,7 +231,7 @@ header {
 }
 
 .record-button:hover {
-    background-color: #0056b3;
+    background-color: #6589b0;
 }
 
 /* Timer Section */
@@ -241,21 +264,21 @@ header {
 }
 
 .start-stop-button {
-    background-color: #55ad23;
+    background-color: #90aa81;
     color: white;
 }
 
 .start-stop-button:hover {
-    background-color: #3cb000;
+    background-color: #a1bb94;
 }
 
 .reset-button {
-    background-color: #e41224;
+    background-color: #c08b90;
     color: white;
 }
 
 .reset-button:hover {
-    background-color: #cc0000;
+    background-color: #c47272;
 }
 
 /* Calendar Section */
@@ -281,14 +304,14 @@ header {
 .calendar-controls button {
     padding: 5px 10px;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #7892af;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 .calendar-controls button:hover {
-    background-color: #0056b3;
+    background-color: #65798f;
 }
 
 .calendar-controls select {

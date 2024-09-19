@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,10 +31,11 @@
         <div class="task-creator">
             <h2>Task Recorder</h2>
                 <div class="task-item">
-                    <input id="task-name-id" type="text" placeholder="Task Name" class="task-recorder-input">
+                    <label>Task Name</label>
+                    <input id="task-name-id" type="text" class="task-recorder-input">
                 </div>
 
-                <div class="difficulty-container">
+                <div class="difficulty-container task-item">
                     <label for="difficulty">Difficulty:</label>
                     <div class="difficulty-bar" id="difficulty-bar">
                         <div class="level" data-level="1"></div>
@@ -44,33 +46,39 @@
                     </div>
                 </div>
 
-                <div class="radio-container">
-                    <label for="task-type">Task Type:</label>
-                    <radio id="task-type-id" class="task-type">
-                        <input type="radio" name="task-type" value="linear">Linear
-                        <input type="radio" name="task-type" value="non-Linear">Non-Linear
-                    </radio>
+
+                <div class="task-item">
+                    <label for="task-type">Task Type</label>
+                    <select name="task-type" id="task-type-id" class="task-type">
+                        <option value="linear">Linear</option>
+                        <option value="non-linear">Non-Linear</option>
+                    </select>
+                </div>
+                
+                <div class="task-item" id="linear-task">
+                    <label>Productivity</label>
+                    <input id="productivity-id" type="number" class="task-recorder-input">
+                </div>
+                
+                <div id="non-linear-prod-radio-id" class="radio-container task-item">
+                    <label for="non-linear-productivity">Productivity</label>
+                    <div class="non-linear-prod">
+                        <input type="radio" name="non-linear-prod" value="low-prod">Low
+                        <input type="radio" name="non-linear-prod" value="mid-prod">Medium
+                        <input type="radio" name="non-linear-prod" value="high-prod">High
+                    </div>
+                </div>
+                
+
+
+                <div class="task-item">
+                    <label>Time</label>
+                    <input id="time-id" type="text" class="task-recorder-input">
                 </div>
 
                 <div class="task-item">
-                    <input id="productivity-id" type="number" placeholder="Productivity" class="task-recorder-input">
-                </div>
-
-                <div hidden id="non-linear-prod-radio-id" class="radio-container">
-                    <label hidden for="non-linear productivity">Productivity:</label>
-                    <radio hidden id="non-linear-prod" class="non-linear-prod">
-                        <input type="radio" name="task-type" value="low-prod">Low
-                        <input type="radio" name="task-type" value="mid-prod">Medium
-                        <input type="radio" name="task-type" value="high-prod">High
-                    </radio>
-                </div>
-
-                <div class="task-item">
-                    <input id="time-id" type="text" placeholder="Time" class="task-recorder-input">
-                </div>
-
-                <div class="task-item">
-                    <input id="tags-id" type="text" placeholder="Add tags separated by commas" class="task-recorder-input" id="tag-input">
+                    <label>Add tags separated by commas:</label>
+                    <input id="tags-id" type="text" class="task-recorder-input" id="tag-input">
                 </div>
 
                 <button id="record-button" class="record-button">Record</button>
@@ -132,6 +140,7 @@
     <script type="text/javascript" src="js/general.js"></script>
     <script type="module" src="js/record.js"></script>
     <script type="module" src="js/auth.js"></script>
-    <script src="/js/difficulty.js"></script>
+    <script src="js/difficulty.js"></script>
+    <script src="js/prod-type.js"></script>
 </body>
 </html>
